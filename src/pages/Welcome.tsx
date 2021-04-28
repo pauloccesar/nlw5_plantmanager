@@ -1,10 +1,16 @@
-import React from 'react';
-import { SafeAreaView, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView, Text, Image, StyleSheet } from 'react-native';
 import wateringImg from '../assets/watering.png';
 import colors from '../styles/colors';
-
+import { Button } from '../components/Button';
 
 export function Welcome() {
+  const [visible, setVisible] = useState(false);
+
+  function handleVisibility() {
+    setVisible(true)
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>
@@ -20,14 +26,8 @@ export function Welcome() {
         sempre que precisar.
       </Text>
 
-      <TouchableOpacity
-        style={styles.button}
-        activeOpacity={0.7}
-      >
-        <Text style={styles.buttonText}>
-          {'>'}
-        </Text>
-      </TouchableOpacity>
+      <Button title='>' />
+
     </SafeAreaView>
   )
 }
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     marginBottom: 10,
     height: 56,
-    width: 56
+    paddingHorizontal: 10
   },
   image: {
     width: 292,
