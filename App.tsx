@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserIdentification } from './src/pages/UserIdentification';
+import Routes from './src/routes';
 import AppLoading from 'expo-app-loading'
 import { Text, View } from 'react-native';
 import {
@@ -18,6 +18,6 @@ export default function App() {
     return <AppLoading />
 
   return (
-    <UserIdentification />
+    <Routes />
   )
 }
